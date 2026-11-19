@@ -188,10 +188,34 @@ main{
 .ico{width:38px;height:38px;border-radius:12px}
 .ico svg{width:18px;height:18px}
 .txt b{font-size:.98rem}.txt small{font-size:.8rem}
-footer{margin-top:14px;font-size:.7rem}
+footer{margin-top:10px;font-size:.7rem}
+
+/* Compact viral cat memes */
+.memes{margin-top:14px;border-radius:18px;padding:5px 5px 0;overflow:hidden}
+.stage{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;cursor:pointer;background:linear-gradient(160deg,hsl(var(--hue) 70% 14%),hsl(var(--hue) 50% 5%));box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+.scene{display:none;position:absolute;inset:0;width:100%;height:100%}
+.scene.on{display:block;animation:sc .45s var(--ease)}
+@keyframes sc{from{opacity:0;transform:scale(1.04)}}
+.mt{font-family:Impact,'Arial Narrow',sans-serif;font-size:15px;fill:#fff;stroke:#000;stroke-width:3.5px;paint-order:stroke;stroke-linejoin:round;text-anchor:middle;letter-spacing:.3px}
+.dn{display:flex;justify-content:center;gap:6px;padding:8px 0 2px}
+.dn button{width:7px;height:7px;border-radius:4px;border:0;padding:0;background:rgba(255,255,255,.28);cursor:pointer;transition:width .25s var(--ease),background .25s}
+.dn button[aria-current=true]{width:18px;background:var(--hi)}
+.dn button:focus-visible{outline:2px solid var(--blood-hi);outline-offset:2px}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="ch" viewBox="0 0 120 100">
+  <polygon points="12,42 20,2 54,24" fill="#d9d3d0"/>
+  <polygon points="108,42 100,2 66,24" fill="#d9d3d0"/>
+  <polygon points="22,32 26,13 42,25" fill="#ff9d94"/>
+  <polygon points="98,32 94,13 78,25" fill="#ff9d94"/>
+  <ellipse cx="60" cy="58" rx="52" ry="40" fill="#e6e0dd"/>
+  <path d="M60 20v10M49 22l2 9M71 22l-2 9" stroke="#9a918d" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M55 66h10l-5 6z" fill="#ff8a80"/>
+  <path d="M36 68l-26-4M36 74l-26 4M84 68l26-4M84 74l26 4" stroke="#fff" stroke-opacity=".8" stroke-width="1.5" stroke-linecap="round"/>
+</symbol>
+</svg>
 <div class="bg" aria-hidden="true"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><canvas id="mist"></canvas><canvas id="live"></canvas></div>
 
 <main class="glass in" style="animation-delay:0ms">
@@ -217,6 +241,139 @@ footer{margin-top:14px;font-size:.7rem}
       <span class="txt"><b>Instagram</b><small>@v3nozk</small></span>
       <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a></li>
   </ul>
+
+<section class="memes glass in" style="animation-delay:1450ms" aria-label="Instagram viral cat memes">
+    <div class="stage">
+      <!-- 1. Pop Cat -->
+      <svg class="scene on" viewBox="0 0 320 180" role="img" aria-label="Pop cat meme">
+        <ellipse cx="160" cy="168" rx="68" ry="28" fill="#d9d3d0"/>
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur=".55s" repeatCount="indefinite"/>
+          <use href="#ch" x="100" y="38" width="120" height="100"/>
+          <ellipse cx="136" cy="88" rx="5.5" ry="7" fill="#1d1414"/>
+          <ellipse cx="184" cy="88" rx="5.5" ry="7" fill="#1d1414"/>
+          <circle cx="138" cy="85" r="1.8" fill="#fff"/><circle cx="186" cy="85" r="1.8" fill="#fff"/>
+          <ellipse cx="160" cy="120" rx="10" ry="2" fill="#4a0d0d">
+            <animate attributeName="ry" values="2;14;2" dur=".55s" repeatCount="indefinite"/>
+          </ellipse>
+        </g>
+        <text class="mt" x="160" y="22">WHEN A NEW VIDEO DROPS</text>
+        <text class="mt" x="160" y="172">*POP*</text>
+      </svg>
+
+      <!-- 2. Crying Cat -->
+      <svg class="scene" viewBox="0 0 320 180" role="img" aria-label="Crying cat meme">
+        <ellipse cx="160" cy="168" rx="68" ry="28" fill="#d9d3d0"/>
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="-1 0;1 0;-1 0" dur=".22s" repeatCount="indefinite"/>
+          <use href="#ch" x="100" y="38" width="120" height="100"/>
+          <ellipse cx="138" cy="90" rx="11" ry="13" fill="#fff"/><ellipse cx="182" cy="90" rx="11" ry="13" fill="#fff"/>
+          <ellipse cx="138" cy="93" rx="7" ry="9" fill="#1d1414"/><ellipse cx="182" cy="93" rx="7" ry="9" fill="#1d1414"/>
+          <circle cx="135" cy="88" r="2.5" fill="#fff"/><circle cx="179" cy="88" r="2.5" fill="#fff"/>
+          <path d="M122 78L148 70M198 78L172 70" stroke="#8a817d" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M148 122q12-9 24 0" stroke="#2a1d1d" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="132" cy="106" rx="3" ry="5" fill="#7fd4ff">
+            <animate attributeName="cy" values="106;155" dur="1s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;1;0" keyTimes="0;.7;1" dur="1s" repeatCount="indefinite"/>
+          </ellipse>
+          <ellipse cx="188" cy="106" rx="3" ry="5" fill="#7fd4ff">
+            <animate attributeName="cy" values="106;155" dur="1s" begin="-.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;1;0" keyTimes="0;.7;1" dur="1s" begin="-.5s" repeatCount="indefinite"/>
+          </ellipse>
+        </g>
+        <text class="mt" x="160" y="22">ME WHEN YOU SKIP</text>
+        <text class="mt" x="160" y="172">THE SUBSCRIBE BUTTON</text>
+      </svg>
+
+      <!-- 3. Vibing Cat -->
+      <svg class="scene" viewBox="0 0 320 180" role="img" aria-label="Vibing cat meme">
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0 0;0 5;0 0" dur=".45s" repeatCount="indefinite"/>
+          <ellipse cx="160" cy="168" rx="68" ry="28" fill="#d9d3d0"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" values="-6 160 140;6 160 140;-6 160 140" dur=".9s" repeatCount="indefinite"/>
+            <use href="#ch" x="100" y="38" width="120" height="100"/>
+            <path d="M128 91q10-10 20 0M172 91q10-10 20 0" stroke="#1d1414" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M148 116q12 9 24 0" stroke="#2a1d1d" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M102 84a58 52 0 0 1 116 0" style="stroke:var(--hi)" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <rect x="93" y="78" width="15" height="28" rx="6" style="fill:var(--hi)" stroke="#fff" stroke-opacity=".45"/>
+            <rect x="212" y="78" width="15" height="28" rx="6" style="fill:var(--hi)" stroke="#fff" stroke-opacity=".45"/>
+          </g>
+        </g>
+        <text x="250" y="100" font-size="18" fill="#fff">♪
+          <animate attributeName="y" values="110;55" dur="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite"/>
+        </text>
+        <text x="58" y="100" font-size="18" style="fill:hsl(var(--hue) 100% 74%)">♫
+          <animate attributeName="y" values="110;55" dur="1.8s" begin="-0.9s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0" dur="1.8s" begin="-0.9s" repeatCount="indefinite"/>
+        </text>
+        <text class="mt" x="160" y="22">ME VIBING TO</text>
+        <text class="mt" x="160" y="172">VENOZK CONTENT</text>
+      </svg>
+
+      <!-- 4. This is fine (Instagram classic) -->
+      <svg class="scene" viewBox="0 0 320 180" role="img" aria-label="This is fine cat meme">
+        <rect width="320" height="180" fill="#2a1810"/>
+        <!-- flames -->
+        <g>
+          <path d="M20 180 Q40 120 60 180 Q80 100 100 180 Q120 110 140 180" fill="#ff6a00" opacity=".9">
+            <animate attributeName="d" values="M20 180 Q40 120 60 180 Q80 100 100 180 Q120 110 140 180;M20 180 Q40 100 60 180 Q80 120 100 180 Q120 90 140 180;M20 180 Q40 120 60 180 Q80 100 100 180 Q120 110 140 180" dur="1.2s" repeatCount="indefinite"/>
+          </path>
+          <path d="M180 180 Q200 110 220 180 Q240 95 260 180 Q280 115 300 180" fill="#ff3d00" opacity=".85">
+            <animate attributeName="d" values="M180 180 Q200 110 220 180 Q240 95 260 180 Q280 115 300 180;M180 180 Q200 95 220 180 Q240 120 260 180 Q280 100 300 180;M180 180 Q200 110 220 180 Q240 95 260 180 Q280 115 300 180" dur="1s" repeatCount="indefinite"/>
+          </path>
+          <path d="M0 180 Q30 140 70 180 Q110 130 150 180 Q190 145 230 180 Q270 135 320 180 L320 180 L0 180" fill="#ff9500" opacity=".7"/>
+        </g>
+        <!-- table -->
+        <rect x="70" y="125" width="180" height="12" rx="2" fill="#5c3a21"/>
+        <rect x="80" y="137" width="8" height="30" fill="#4a2f1a"/>
+        <rect x="232" y="137" width="8" height="30" fill="#4a2f1a"/>
+        <!-- coffee -->
+        <ellipse cx="200" cy="120" rx="14" ry="6" fill="#fff"/>
+        <rect x="188" y="100" width="24" height="22" rx="3" fill="#fff"/>
+        <ellipse cx="200" cy="100" rx="12" ry="4" fill="#c4a574"/>
+        <!-- cat -->
+        <g>
+          <use href="#ch" x="95" y="55" width="100" height="85"/>
+          <ellipse cx="125" cy="95" rx="5" ry="6" fill="#1d1414"/>
+          <ellipse cx="165" cy="95" rx="5" ry="6" fill="#1d1414"/>
+          <circle cx="127" cy="93" r="1.5" fill="#fff"/><circle cx="167" cy="93" r="1.5" fill="#fff"/>
+          <path d="M135 115 q15 8 30 0" stroke="#2a1d1d" stroke-width="2" fill="none"/>
+        </g>
+        <text class="mt" x="160" y="28">THIS IS FINE</text>
+        <text class="mt" x="160" y="170">ME WAITING FOR THE ALGORITHM</text>
+      </svg>
+
+      <!-- 5. Judging / Smudge style cat -->
+      <svg class="scene" viewBox="0 0 320 180" role="img" aria-label="Judging cat meme">
+        <rect width="320" height="180" fill="#1a1210"/>
+        <ellipse cx="160" cy="170" rx="90" ry="30" fill="#2a2018"/>
+        <g>
+          <use href="#ch" x="85" y="25" width="150" height="125"/>
+          <!-- heavy lidded eyes -->
+          <ellipse cx="130" cy="85" rx="14" ry="9" fill="#fff"/>
+          <ellipse cx="190" cy="85" rx="14" ry="9" fill="#fff"/>
+          <ellipse cx="132" cy="88" rx="8" ry="7" fill="#1d1414"/>
+          <ellipse cx="192" cy="88" rx="8" ry="7" fill="#1d1414"/>
+          <circle cx="129" cy="85" r="2.2" fill="#fff"/><circle cx="189" cy="85" r="2.2" fill="#fff"/>
+          <!-- unimpressed mouth -->
+          <path d="M145 120 q15 -4 30 0" stroke="#2a1d1d" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- raised eyebrow -->
+          <path d="M115 70 q15 -8 30 2" stroke="#8a817d" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </g>
+        <text class="mt" x="160" y="22">WHEN SOMEONE SAYS</text>
+        <text class="mt" x="160" y="170">"I DON'T WATCH VENOZK"</text>
+      </svg>
+    </div>
+    <div class="dn">
+      <button aria-label="Meme 1"></button>
+      <button aria-label="Meme 2"></button>
+      <button aria-label="Meme 3"></button>
+      <button aria-label="Meme 4"></button>
+      <button aria-label="Meme 5"></button>
+    </div>
+  </section>
   <footer class="in" style="animation-delay:1650ms">&copy; 2026 VENOZK</footer>
 </main>
 
@@ -387,6 +544,23 @@ document.querySelectorAll('.link').forEach(function(el){
   root.addEventListener('pointerleave',function(){m.tx=m.ty=-9999});
   size();
   if(!still)requestAnimationFrame(function(ms){last=ms*.001;frame(ms)});
+})();
+
+/* Compact meme carousel */
+(function(){
+  var sc=document.querySelectorAll('.scene'),dt=document.querySelectorAll('.dn button'),i=0,tm;
+  function show(n){
+    i=(n+sc.length)%sc.length;
+    sc.forEach(function(s,k){var on=k===i;s.classList.toggle('on',on);if(on){try{s.setCurrentTime(0)}catch(e){}}});
+    dt.forEach(function(b,k){b.setAttribute('aria-current',k===i?'true':'false')});
+  }
+  function auto(){clearInterval(tm);tm=setInterval(function(){show(i+1)},4500)}
+  var stage=document.querySelector('.stage');
+  if(stage){
+    stage.addEventListener('click',function(){show(i+1);auto()});
+    dt.forEach(function(b,k){b.addEventListener('click',function(e){e.stopPropagation();show(k);auto()})});
+    show(0);auto();
+  }
 })();
 </script>
 </body>
